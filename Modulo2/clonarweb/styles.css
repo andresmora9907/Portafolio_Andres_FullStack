@@ -1,0 +1,113 @@
+/* RESET DE ESTILOS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVEGACIÓN */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo { width: 50px; }
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-left ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.btn-login {
+    border: 1px solid black;
+    background: white;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-join {
+    background: black;
+    color: white;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* SECCIONES DE PROMO (FLEXBOX) */
+.promo-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    min-height: 400px;
+}
+
+.promo-image, .promo-text {
+    flex: 1; /* Cada uno ocupa el 50% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.promo-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* COLORES Y VARIACIONES */
+.verde-oscuro {
+    background-color: #1e3932; /* Verde clásico Starbucks */
+    color: white;
+}
+
+.verde-claro {
+    background-color: #d4e9e2; /* Verde menta */
+    color: #1e3932;
+}
+
+/* LA CLAVE: Invertir el orden en pantallas grandes */
+.reverse {
+    flex-direction: row-reverse;
+}
+
+/* BOTONES DE LAS SECCIONES */
+.btn-outline {
+    background: transparent;
+    border: 1px solid currentColor;
+    color: inherit;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}

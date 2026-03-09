@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+section{
+    /* background-color: lightseagreen; */
+    width: 90%;
+    display: flex;
+}
+
+.tarjeta{
+    background-color: white; /* O transparente */
+    width: 450px;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Raleway";
+    margin: 30px;
+    position: relative;
+    overflow: hidden; /* Esto evita que el color se salga de las esquinas redondeadas */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#color-fondo-1, #color-fondo-2, #color-fondo-3 {
+    width: 100%;       /* Ocupa todo el ancho de la tarjeta */
+    height: 280px;      /* Altura del bloque de color */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;        /* Capa de atrás */
+}
+
+#color-fondo-1 { background-color: #c15252; }
+#color-fondo-2 { background-color: #43351b; }
+#color-fondo-3 { background-color: #b2b4b3; }
+
+.tarjeta .figura{
+    width: 80%;
+    position: relative;
+    z-index: 2;        /* Capa de adelante */
+    bottom: 8px;
+    height: auto;      /* Deja que la altura sea automática para no deformar */
+    max-height: 400px; 
+    transition: transform 0.3s ease-in-out;
+    margin: 0 auto;
+}
+
+h2{
+    margin-top: 20px;
+    margin: 0 30px;
+}
+
+.entrega{
+    margin-top: 20px;
+    color:rgb(83, 83, 83);
+}
+
+.precios{
+    width: 450px;
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tachado{
+    margin-top: 20px;
+    padding-left: 30px;
+    color: red;
+    text-decoration-line: line-through;
+    font-weight: bold;
+}
+
+.precio{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.precios .carrito{
+    width: 30px;
+    position: absolute;
+    left: 430px;
+    top: 620px;
+}
+
+.precios .corazon{
+    width: 30px;
+    position: absolute;
+    left: 430px;
+    top: 20px;
+}
+
+.figura:hover {
+    transform: translateY(-20px) scale(1.05);
+}
