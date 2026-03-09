@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000;
+}
+
+p{
+    color: white;
+}
+
+h1{
+    color: blue;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+img{
+    display: block;
+    margin: 10px auto;
+    width: 70px;
+}
+
+/* Asegura que los títulos de sección ocupen todo el ancho y se centren */
+#historias h2, #ejercicios h2 {
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.memorias { 
+    background-color: blueviolet;
+    color: whitesmoke;
+    width: 300px;
+    min-height: 800px; /* Cambiado de height a min-height */
+    border: dashed 6px cyan;
+    padding: 30px;
+    /* Ya no necesitas margin: 2px ni display: block, el Flexbox del padre lo maneja */
+}
+
+#fecha_especial{
+    color: aqua;
+    border-color: rebeccapurple;
+    order: -1;
+}
+
+.ejercicio{
+    width: 400px;
+    min-height: 450px;
+    background-color: #0f174f;
+    color: white;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex; /* Usamos flex dentro de la tarjeta para empujar el botón al final */
+    flex-direction: column;
+}
+
+.ejercicio h3{
+    font-size: 40px;
+}
+
+.ejercicio button{
+    margin-top: auto; 
+    align-self: flex-start; /* Mantiene el botón a la izquierda o úsalo center */
+    background-color: #0f174f;
+    border: solid 2px white;
+    color: white;
+    width: 120px;
+    height: 58px;
+    border-radius: 25px 25px 25px 0px;
+    transition: all 0.3s ease;
+}
+
+.ejercicio button:hover {
+    background-color: aquamarine;
+    color: blue;
+    transform: scale(1.1); /* Crece sin mover a los vecinos */
+}
+
+/* Esto centrará las 3 cajas de arriba y las 3 de abajo */
+#historias, #ejercicios {
+    display: flex;          /* Activa el alineamiento flexible */
+    flex-wrap: wrap;       /* Permite que las cajas bajen si no caben */
+    justify-content: center; /* ¡ESTO es lo que las mueve al centro! */
+    align-items: stretch;   /* Opcional: hace que todas midan lo mismo de alto */
+    gap: 20px;             /* Define el espacio entre cajas sin usar márgenes locos */
+    padding: 40px 0;       /* Espacio arriba y abajo de la sección */
+}
+
+.memorias h3, .ejercicio h3 { /* Titulos */
+    font-size: 32px; /* Un tamaño equilibrado para ambos */
+    margin-bottom: 20px; /* Crea espacio hacia abajo */
+    border-bottom: 1px solid rgba(255,255,255,0.2); /* Una línea sutil ayuda a separar */
+    padding-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Un toque de sombra para resaltar */
+}
+
+.memorias p, .ejercicio p, .memorias li {
+    line-height: 1.4; /* Separa las líneas de texto entre sí */
+    margin-bottom: 15px; /* Separa los párrafos entre sí */
+    text-align: justify;
+    font-size: 18px;
+}
+
+.memorias ul, .memorias ol {
+    padding-left: 20px; /* Para que los puntos/números no queden pegados al borde */
+}
+
+#registro {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+form {
+    background-color: #1a1a1a; /* Gris muy oscuro */
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    width: 100%;
+    max-width: 500px;
+    color: white;
+}
+
+form h2 {
+    margin-bottom: 20px;
+    color: #00529f; /* Azul Real Madrid */
+    text-align: center;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #00529f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background-color: #007bb5;
+}
+
+div{
+    width: 1120px;
+    height: 240px;
+    background-color: blueviolet;
+}
+
+#bandera_mexico {
+    display: flex;       /* ¡Paso 1: Activamos Flexbox! */
+    width: 1120px;
+    height: 720px;
+    position: relative;  /* Mejor relative para que no se mueva de su lugar */
+}
+
+#bandera_mexico div {
+    flex: 1;            /* Cada div ocupa el mismo espacio (33.33%) */
+    height: 100%;       /* Ocupan todo el alto del padre */
+    position: static;   /* Quitamos el absolute para que Flexbox los controle */
+}
+
+/* Ahora jugamos con el orden */
+#verde {
+    background-color: rgb(10, 92, 34);
+    order: 1; /* Por defecto es 0, pero vamos a darle orden */
+}
+
+#blanco_2 {
+    background-color: white;
+    order: 2;
+}
+
+#rojo_2 {
+    background-color: red;
+    order: 3;
+}
+
+#escudo {
+position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Esto lo centra perfecto matemáticamente */
+    width: 150px; /* Ajusta el tamaño aquí */
+    z-index: 10;  /* Asegura que esté por encima de los colores */
+}
